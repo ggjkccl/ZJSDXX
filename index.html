@@ -2,69 +2,197 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Earn Extra Income</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Earn Extra Income at Home</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
     }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f3f3f3;
-      overflow-x: hidden;
+    body{
+      background:#f5f7fb;
+      color:#1b1b1b;
     }
 
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 70px 40px;
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px 20px;
+      background:
+        linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.92)),
+        url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop') center/cover;
     }
 
-    .hero {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 60px;
-      position: relative;
+    .container{
+      max-width:1200px;
+      width:100%;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:60px;
+      align-items:center;
     }
 
-    .left {
-      width: 50%;
-      z-index: 2;
+    .left h1{
+      font-size:72px;
+      line-height:0.95;
+      color:#082b66;
+      font-weight:900;
+      margin-bottom:20px;
     }
 
-    .title {
-      font-size: 92px;
-      line-height: 0.92;
-      font-weight: 900;
-      color: #071120;
-      letter-spacing: -4px;
+    .left h1 span{
+      color:#c59a5c;
+      font-style:italic;
+      font-weight:500;
+      display:block;
+      margin-top:10px;
     }
 
-    .description {
-      margin-top: 40px;
-      font-size: 24px;
-      line-height: 1.4;
-      color: #111;
-      max-width: 580px;
+    .badge{
+      display:inline-block;
+      background:#082b66;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:50px;
+      font-size:15px;
+      font-weight:bold;
+      letter-spacing:1px;
+      margin-bottom:30px;
     }
 
-    .whatsapp-btn {
-      display: inline-block;
-      margin-top: 45px;
-      background: #18c77c;
-      color: white;
-      text-decoration: none;
-      font-size: 28px;
-      font-weight: bold;
-      padding: 22px 55px;
-      border-radius: 60px;
-      transition: 0.3s;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    .desc{
+      font-size:20px;
+      line-height:1.8;
+      color:#444;
+      margin-bottom:35px;
     }
 
-    .whatsapp-btn:h
+    .features{
+      display:flex;
+      gap:20px;
+      flex-wrap:wrap;
+      margin-bottom:35px;
+    }
+
+    .feature{
+      background:#fff;
+      padding:18px 22px;
+      border-radius:16px;
+      box-shadow:0 8px 25px rgba(0,0,0,0.08);
+      font-size:15px;
+      font-weight:bold;
+      color:#082b66;
+    }
+
+    .cta{
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      padding:18px 34px;
+      border-radius:60px;
+      font-size:22px;
+      font-weight:bold;
+      transition:0.3s ease;
+      box-shadow:0 10px 25px rgba(37,211,102,0.35);
+    }
+
+    .cta:hover{
+      transform:translateY(-3px);
+      background:#1ebe5d;
+    }
+
+    .right img{
+      width:100%;
+      border-radius:30px;
+      box-shadow:0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .footer{
+      text-align:center;
+      padding:25px;
+      font-size:14px;
+      color:#777;
+      background:#fff;
+    }
+
+    @media(max-width:900px){
+      .container{
+        grid-template-columns:1fr;
+      }
+
+      .left h1{
+        font-size:52px;
+      }
+
+      .desc{
+        font-size:18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="left">
+
+      <h1>
+        EARN EXTRA INCOME
+        <span>at Home</span>
+      </h1>
+
+      <div class="badge">
+        FLEXIBLE • RELIABLE • REWARDING
+      </div>
+
+      <p class="desc">
+        In recent years, prices have increased rapidly while salaries remain the same.
+        More people are now building multiple income streams from home using the internet and technology.
+        <br><br>
+        Start your flexible online side income today and work from the comfort of your home.
+      </p>
+
+      <div class="features">
+        <div class="feature">🏠 Work From Home</div>
+        <div class="feature">⏰ Flexible Schedule</div>
+        <div class="feature">💰 Extra Income</div>
+        <div class="feature">💻 Online Opportunity</div>
+      </div>
+
+      <!-- WhatsApp CTA -->
+      <a
+        class="cta"
+        href="https://wa.me/1234567890"
+        target="_blank"
+      >
+        Contact Us on WhatsApp
+      </a>
+
+    </div>
+
+    <div class="right">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="Work From Home">
+    </div>
+
+  </div>
+
+</section>
+
+<div class="footer">
+  © 2026 Work From Home Opportunity • New Zealand
+</div>
+
+</body>
+</html>
