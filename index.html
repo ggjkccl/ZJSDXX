@@ -3,238 +3,274 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Investment System｜Thinking Method</title>
+<title>Stock Intelligence Lab | 日本株式投資教育</title>
+
+<!-- GA4（替换ID） -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-XXXXXXXXXX');
+</script>
+
+<!-- LINE / FB Pixel（可选） -->
+<script>
+!function(f,b,e,v,n,t,s){
+if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', 'XXXXXXXXXXXX');
+fbq('track', 'PageView');
+</script>
 
 <style>
 body{
-  margin:0;
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
-  background:#0b0f19;
-  color:#fff;
+margin:0;
+font-family:"Noto Sans JP",sans-serif;
+background:#0b0f1a;
+color:#fff;
 }
+
+.container{max-width:1080px;margin:auto;padding:0 20px}
 
 /* HERO */
 .hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  padding:28px 16px 120px;
-  gap:18px;
+padding:90px 20px;
+text-align:center;
+background:radial-gradient(circle at top,#1a2238,#0b0f1a);
 }
 
-/* 人物图 */
-.hero-image{
-  width:100%;
-  max-width:520px;
-  border-radius:16px;
-  overflow:hidden;
-  border:1px solid rgba(255,255,255,0.08);
+.badge{
+display:inline-block;
+padding:6px 12px;
+border:1px solid #4f46e5;
+color:#a5b4fc;
+border-radius:999px;
+font-size:12px;
+margin-bottom:15px;
 }
 
-.hero-image img{
-  width:100%;
-  height:420px;
-  object-fit:cover;
-}
+h1{font-size:44px;margin:10px 0}
 
-/* 内容 */
-.content{
-  width:100%;
-  max-width:520px;
+.sub{
+color:#cbd5e1;
+font-size:18px;
+max-width:720px;
+margin:auto;
 }
-
-.tag{
-  display:inline-block;
-  padding:6px 10px;
-  border:1px solid #ff0033;
-  color:#ff0033;
-  font-size:12px;
-  margin-bottom:10px;
-}
-
-h1{
-  font-size:24px;
-  margin:10px 0;
-  line-height:1.3;
-}
-
-.subtitle{
-  font-size:13px;
-  opacity:0.8;
-  line-height:1.6;
-}
-
-.quote{
-  margin-top:12px;
-  font-size:14px;
-  font-weight:bold;
-}
-
-.highlight{ color:#ff0033; }
 
 /* CTA */
 .cta{
-  margin-top:16px;
-  display:block;
-  background:#06c755;
-  padding:14px;
-  border-radius:10px;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-  font-weight:bold;
+margin-top:25px;
+display:inline-block;
+background:#06c755;
+padding:15px 30px;
+border-radius:12px;
+font-weight:700;
+color:#fff;
+transition:.2s;
 }
 
-/* card */
+.cta:hover{transform:scale(1.05)}
+
+/* TRUST BAR */
+.trust{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+margin-top:40px;
+color:#94a3b8;
+font-size:13px;
+}
+
+/* SECTION */
+section{padding:70px 0}
+
+h2{text-align:center;font-size:26px;margin-bottom:30px}
+
+/* CARDS */
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
 .card{
-  margin-top:14px;
-  background:#111827;
-  padding:16px;
-  border-radius:12px;
-  border:1px solid rgba(255,255,255,0.05);
+background:#111827;
+padding:20px;
+border-radius:14px;
+border:1px solid #1f2937;
 }
 
-.card h3{
-  font-size:15px;
-  margin-bottom:8px;
+.card h3{color:#93c5fd}
+
+/* PERSONA */
+.persona{
+background:#0f172a;
+border-top:1px solid #1e293b;
+border-bottom:1px solid #1e293b;
 }
 
-.small{
-  font-size:13px;
-  opacity:0.75;
-  line-height:1.6;
+.persona-box{
+display:flex;
+gap:30px;
+align-items:center;
 }
 
-/* section */
-.section{
-  margin-top:14px;
+.avatar{
+width:180px;
+height:180px;
+border-radius:16px;
+background:linear-gradient(135deg,#4f46e5,#06c755);
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+font-size:14px;
 }
 
-.list{
-  font-size:13px;
-  opacity:0.8;
-  line-height:1.8;
+/* FLOAT CTA (关键转化组件) */
+.float-cta{
+position:fixed;
+bottom:15px;
+left:50%;
+transform:translateX(-50%);
+background:#06c755;
+padding:14px 28px;
+border-radius:999px;
+font-weight:700;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+z-index:999;
 }
 
-/* fixed CTA */
-.fixed{
-  position:fixed;
-  bottom:0;
-  left:0;
-  right:0;
-  background:#0b0f19;
-  padding:12px;
-  border-top:1px solid rgba(255,255,255,0.1);
-}
-
-.fixed a{
-  display:block;
-  background:#06c755;
-  padding:14px;
-  border-radius:10px;
-  text-align:center;
-  text-decoration:none;
-  color:#fff;
-  font-weight:bold;
+/* MOBILE */
+@media(max-width:768px){
+.grid{grid-template-columns:1fr}
+h1{font-size:30px}
+.persona-box{flex-direction:column;text-align:center}
 }
 </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
+  <div class="container">
 
-  <!-- 人设视觉 -->
-  <div class="hero-image">
-    <img src="hero.jpg" alt="Horiemon style">
-  </div>
+    <div class="badge">Japan Stock Intelligence System</div>
 
-  <div class="content">
+    <h1>情報で勝つ投資家へ</h1>
 
-    <div class="tag">INVESTMENT × SPEED × LOGIC</div>
+    <p class="sub">
+      日本株市場は「努力」ではなく「情報格差」で決まる。<br/>
+      このプログラムは、分析・意思決定・売買判断を体系化する教育システムです。
+    </p>
 
-    <h1>
-      思考を変えろ。市場は単純だ。
-    </h1>
-
-    <div class="subtitle">
-      元ライブドア社長の思考スタイルから学ぶ<br>
-      “感情に依存しない投資判断システム”
-    </div>
-
-    <div class="quote">
-      「結果を決めるのは才能ではなく<span class="highlight">情報速度</span>だ」
-    </div>
-
-    <a class="cta" href="https://line.me/" target="_blank">
-      LINEで無料参加
+    <a class="cta"
+       href="https://line.me/R/ti/p/@YOUR_LINE_ID"
+       onclick="fbq('track','Lead');">
+       LINEで無料参加する
     </a>
 
-    <!-- 核心说明 -->
-    <div class="card">
-      <h3>このプログラムとは</h3>
-      <div class="small">
-        本システムは市場予測ではなく、「意思決定の構造化」を目的としています。<br>
-        投資を“感覚”ではなく“ルール化された判断”へ変換します。
-      </div>
+    <div class="trust">
+      <div>✔ 初心者対応</div>
+      <div>✔ 完全オンライン</div>
+      <div>✔ 日本株特化</div>
+      <div>✔ 無料スタート</div>
     </div>
 
-    <!-- 方法论 -->
-    <div class="card">
-      <h3>提供内容</h3>
-      <div class="list">
-        ・短期トレンド判断フレーム<br>
-        ・資金フローの可視化手法<br>
-        ・リスク管理のルール設計<br>
-        ・感情トレード排除ロジック
+  </div>
+</div>
+
+<!-- VALUE -->
+<section>
+  <div class="container">
+
+    <h2>このプログラムの本質</h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>市場構造の理解</h3>
+        <p>チャートではなく「資金の流れ」で判断する思考法。</p>
       </div>
+
+      <div class="card">
+        <h3>ルールベース投資</h3>
+        <p>感情排除・再現可能なトレード設計。</p>
+      </div>
+
+      <div class="card">
+        <h3>情報速度の最適化</h3>
+        <p>ニュース・決算・需給を瞬時に判断するスキル。</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PERSONA -->
+<section class="persona">
+  <div class="container persona-box">
+
+    <div class="avatar">
+      Horie Style<br/>Thinking System
     </div>
 
-    <!-- 逻辑 -->
-    <div class="card">
-      <h3>なぜ勝てないのか</h3>
-      <div class="small">
-        多くの投資家は「分析不足」ではなく「判断遅延」で負けます。<br><br>
-        市場は複雑ではありません。複雑に感じるのは情報整理ができていないだけです。
-      </div>
+    <div>
+      <h2 style="text-align:left;">なぜ“この思想”なのか</h2>
+
+      <p style="color:#cbd5e1">
+        投資は努力ではなく設計です。<br/><br/>
+        情報の取得速度と意思決定の合理性がすべてを決める。<br/><br/>
+        このプログラムは従来型の教育ではなく、
+        <strong>思考OSのアップグレード</strong>を目的としています。
+      </p>
+
+      <a class="cta"
+         href="https://line.me/R/ti/p/@YOUR_LINE_ID"
+         onclick="fbq('track','Lead');">
+         今すぐLINEで参加
+      </a>
+
     </div>
 
-    <!-- 人设绑定 -->
-    <div class="card">
-      <h3>思想ベース</h3>
-      <div class="small">
-        本プログラムは:contentReference[oaicite:1]{index=1}の<br>
-        効率主義・即断即決の思考スタイルを参考に設計されています。
-      </div>
-    </div>
+  </div>
+</section>
 
-    <!-- FAQ -->
-    <div class="card">
-      <h3>よくある質問</h3>
-      <div class="small">
-        Q：初心者でもできますか？<br>
-        A：ルール化された判断なので可能です。<br><br>
+<!-- FINAL CTA -->
+<section>
+  <div class="container" style="text-align:center">
 
-        Q：どのくらい時間が必要ですか？<br>
-        A：短時間で判断できる設計です。<br><br>
+    <h2>すでに多くの投資家が移行しています</h2>
 
-        Q：投資経験がなくても大丈夫？<br>
-        A：必要なのは経験ではなく“理解構造”です。
-      </div>
-    </div>
+    <p style="color:#cbd5e1">
+      この情報に触れた時点で、差は始まっています。
+    </p>
 
-    <a class="cta" href="https://line.me/" target="_blank">
-      今すぐLINEで無料参加
+    <a class="cta"
+       href="https://line.me/R/ti/p/@YOUR_LINE_ID"
+       onclick="fbq('track','Lead');">
+       LINEで無料スタート
     </a>
 
   </div>
+</section>
 
-</div>
-
-<div class="fixed">
-  <a href="https://line.me/">LINEで無料参加</a>
-</div>
+<!-- FLOAT CTA（转化核心） -->
+<a class="float-cta"
+   href="https://line.me/R/ti/p/@YOUR_LINE_ID"
+   onclick="fbq('track','Lead');">
+   LINE登録して無料受講
+</a>
 
 </body>
 </html>
