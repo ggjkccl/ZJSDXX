@@ -13,24 +13,43 @@
     color:#fff;
   }
 
-  /* TOP HERO */
+  /* HERO */
   .hero{
     display:flex;
     min-height:100vh;
   }
 
+  /* 替代图片：人物杂志剪影风 */
   .left{
     flex:1;
-    background:url("https://upload.wikimedia.org/wikipedia/commons/1/1e/Takafumi_Horie_2019.jpg") center/cover;
     position:relative;
+    background: radial-gradient(circle at 30% 30%, #1f2a44, #05070c);
+    overflow:hidden;
   }
 
-  .overlay{
+  /* 人物剪影层（增强“堀江贵文感”） */
+  .silhouette{
     position:absolute;
     inset:0;
-    background:linear-gradient(90deg, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+    background:
+      linear-gradient(120deg, rgba(0,0,0,0.9), rgba(0,0,0,0.2)),
+      radial-gradient(circle at 60% 50%, rgba(122,162,255,0.2), transparent 60%);
   }
 
+  .shape{
+    position:absolute;
+    width:280px;
+    height:420px;
+    background:linear-gradient(180deg, #ffffff22, transparent);
+    clip-path: polygon(50% 0%, 65% 10%, 70% 25%, 60% 45%, 62% 70%, 55% 100%, 45% 100%, 40% 70%, 42% 45%, 30% 25%, 35% 10%);
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    filter:blur(0.3px);
+    opacity:0.8;
+  }
+
+  /* RIGHT */
   .right{
     flex:1;
     padding:60px;
@@ -91,7 +110,7 @@
     transform:scale(1.05);
   }
 
-  /* MAGAZINE SECTION */
+  /* SECTION */
   .section{
     padding:80px 20px;
     max-width:1000px;
@@ -133,11 +152,11 @@
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
 
   <div class="left">
-    <div class="overlay"></div>
+    <div class="silhouette"></div>
+    <div class="shape"></div>
   </div>
 
   <div class="right">
@@ -153,22 +172,21 @@
       本プログラムは、日本の実業家
       <strong>堀江貴文</strong>
       :contentReference[oaicite:0]{index=0} の思考スタイル
-      （効率・即断・情報優位性）にインスパイアされた
-      株式投資トレーニングです。
+      にインスパイアされた株式投資教育です。
       <br/><br/>
-      「努力より構造」「感情よりデータ」を重視します。
+      「感情ではなく構造」「努力ではなく効率」を重視します。
     </p>
 
     <div class="chips">
       <div class="chip">高速意思決定</div>
-      <div class="chip">データドリブン</div>
-      <div class="chip">リスク制御</div>
-      <div class="chip">実践型トレーニング</div>
+      <div class="chip">データ思考</div>
+      <div class="chip">リスク管理</div>
+      <div class="chip">再現性モデル</div>
     </div>
 
     <div class="cta">
       <a class="btn" href="https://wa.me/0000000000" target="_blank">
-        WhatsAppでコミュニティ参加
+        WhatsAppで参加する
       </a>
     </div>
 
@@ -176,23 +194,22 @@
 
 </div>
 
-<!-- SECTION -->
 <div class="section">
 
   <div class="grid">
 
     <div class="card">
       <h3>なぜ負けるのか</h3>
-      <p>感情トレード・情報遅延・無戦略が原因</p>
+      <p>情報遅延・感情トレード・無戦略</p>
     </div>
 
     <div class="card">
       <h3>学習方法</h3>
-      <p>短時間×高頻度の実践シナリオ訓練</p>
+      <p>短時間シナリオ型トレーニング</p>
     </div>
 
     <div class="card">
-      <h3>ゴール</h3>
+      <h3>目的</h3>
       <p>判断スピードと再現性の構築</p>
     </div>
 
@@ -201,7 +218,7 @@
 </div>
 
 <div class="footer">
-※本ページは教育コンテンツであり、投資助言ではありません。
+教育目的のコンテンツです。投資助言ではありません。
 </div>
 
 </body>
